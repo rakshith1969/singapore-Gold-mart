@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+singaporegoldmart.com	TRUE	/	FALSE	1999999999	ci_session	ltn2gcrvr7loasjlgsh82qgfoc1gsf7q
+singaporegoldmart.com	TRUE	/	FALSE	1999999999	lang	deleted
+singaporegoldmart.com	TRUE	/	FALSE	1999999999	curr	22
+
