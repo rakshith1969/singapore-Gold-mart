@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--<![endif]-->
+<!--<![endif]-->
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	
+	<title>Singapore Gold Mart</title>
+
+
+
+
+
+	<!-- Javascript Files -->
+	<script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script src="../ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	
+
+	<script src="../maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="../ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	
+
+	<!--flex slider-->
+	<link rel="stylesheet" href="assets/flex/flexslider.css" type="text/css" media="screen" />
+	<script src="../code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript" src="assets/flex/jquery.flexslider.js"></script>
+
+	
+
+	<!-- Javascript Files for current page only -->
+
+	<script src="assets/js/socket.io.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/plugins.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	<!-- Magnific Popup core CSS file -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function (slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+	
+<style type="text/css">
+	.arrow-green {
+		background: url("assets/images/arrow_up_new.png") no-repeat right;
+		display: block;
+		padding: 5px;
+		border-radius: 15px;
+	}
+
+	.arrow-red {
+		background: url("assets/images/arrow_down_new.png") no-repeat right;
+		display: block;
+		padding: 5px;
+		border-radius: 15px;
+	}
+
+	.arrow-white {
+		background-image: none;
+		display: block;
+		padding: 5px;
+		border-radius: 15px;
+	}
+	body {
+		background-color: transparent !important;
+	}
+	
+	.table-responsivetop10 {
+    background: #541C04;
+    text-align: center;
+    margin-top: 49px;
+}
+.
+	
+</style>
+
+<script type="text/javascript">
+	var colsubNames = new Array("askdollar", "premium", "bconvert_value", "inr", "rupeepremium", "custom", "btax_type",
+		"btax_value", "pure", "grmrate", "kgrate");
+	var rpanelbankrates = [{
+		"bcontract_id": "1",
+		"bcontract_symbol": "Gold 100gms",
+		"bcontract_rate": "SPOT-GOLD",
+		"bconvert_value": "32.1508",
+		"bconvert_value_type": "3",
+		"bextra_charges": "0.00000",
+		"bextra_type": "1",
+		"bbase_rate": "100.00",
+		"btax_type": "2",
+		"btax_value": "0.000",
+		"efp": "0.000",
+		"premium": "3.000",
+		"rupeepremium": "0.000",
+		"custom": "0.000",
+		"octroi": "0.000",
+		"pure": "0",
+		"biddiff": "0",
+		"askdiff": "0",
+		"bid_premium": "0.00000",
+		"exchange_ask": "0.00000",
+		"exchange_bid": "0.00000",
+		"ctype": "2"
+	}, {
+		"bcontract_id": "2",
+		"bcontract_symbol": "Gold 1kg",
+		"bcontract_rate": "SPOT-GOLD",
+		"bconvert_value": "32.1508",
+		"bconvert_value_type": "3",
+		"bextra_charges": "0.00000",
+		"bextra_type": "1",
+		"bbase_rate": "1000.00",
+		"btax_type": "2",
+		"btax_value": "0.000",
+		"efp": "0.000",
+		"premium": "2.800",
+		"rupeepremium": "0.005",
+		"custom": "0.000",
+		"octroi": "0.000",
+		"pure": "0",
+		"biddiff": "0",
+		"askdiff": "0",
+		"bid_premium": "0.00000",
+		"exchange_ask": "0.00000",
+		"exchange_bid": "0.00000",
+		"ctype": "2"
+	}];
+	var rpaneldata = {
+		"id": "1",
+		"rate_display": "1",
+		"market_status": "0",
+		"lastupdatetime": "26-01-2024 02:55:50",
+		"message": "",
+		"updateon": "1706252150",
+		"userupdatetime": "1706252150",
+		"usercheckupdatetime": "1706252150"
+	};
+	var rpanelsetting = {
+		"rpsg_weight": "1000.00",
+		"rpss_weight": "1000.00",
+		"rpsg_roundoff": "0.05",
+		"rpss_roundoff": "0.05"
+	};
+	var rpanelcontract = [{
+		"contract_id": "1",
+		"contract_symbol": "GOLD-C",
+		"displayname": "GOLD - C",
+		"biddiff": "0.00",
+		"askdiff": "0.00",
+		"showdiff": "0",
+		"ctype": "1",
+		"displayorder": "1",
+		"userpage_displayname": null,
+		"userpage_status": null
+	}, {
+		"contract_id": "9",
+		"contract_symbol": "SPOT-GOLD",
+		"displayname": "GOLD ($)",
+		"biddiff": "0.00",
+		"askdiff": "0.00",
+		"showdiff": "0",
+		"ctype": "2",
+		"displayorder": "5",
+		"userpage_displayname": null,
+		"userpage_status": null
+	}, {
+		"contract_id": "10",
+		"contract_symbol": "SPOT-SILVER",
+		"displayname": "SILVER ($)",
+		"biddiff": "0.00",
+		"askdiff": "0.00",
+		"showdiff": "0",
+		"ctype": "2",
+		"displayorder": "10",
+		"userpage_displayname": null,
+		"userpage_status": null
+	}, {
+		"contract_id": "12",
+		"contract_symbol": "SIN",
+		"displayname": "SING",
+		"biddiff": "0.00",
+		"askdiff": "0.00",
+		"showdiff": "0",
+		"ctype": "1",
+		"displayorder": "11",
+		"userpage_displayname": null,
+		"userpage_status": null
+	}];
+	var rpanelcommodities = [{
+		"comid": "1",
+		"dispname": "GOLD-100Gms",
+		"mcxcontract": "GOLD-C",
+		"comtype": "0",
+		"tradetype": "1",
+		"selldiff": "44.00",
+		"buydiff": "80.00",
+		"sellrate": "87.75",
+		"bcontract_id": "1",
+		"bcontract_rate": "SPOT-GOLD"
+	}, {
+		"comid": "2",
+		"dispname": "GOLD-1Kg",
+		"mcxcontract": "GOLD-C",
+		"comtype": "0",
+		"tradetype": "1",
+		"selldiff": "48.00",
+		"buydiff": "300.00",
+		"sellrate": "876.75",
+		"bcontract_id": "2",
+		"bcontract_rate": "SPOT-GOLD"
+	}];
+	console.log(rpanelcommodities);
+</script>
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		document.addEventListener("visibilitychange", function () {
+			if (document.hidden) {
+				console.log("Browser tab is hidden")
+			} else {
+				//location.reload(true);
+				window.location.reload(true);
+			}
+		});
+		// 		$.ajax({
+		// 			url : "http://www.bullionharvest.net/index.php/C_booking/get_commodity_data",
+		// 			type : "GET",
+		// 			dataType : "json",
+		// 			data: "",
+		// 			async: false,
+		// 			success: function(data){
+		// 				if(data.commoditydetails.length > 0){
+		// 					$("#liveratetable tbody").empty();
+		// 					$("#liveratetable_coin tbody").empty();
+		// 					$("#liveratetable_spl tbody").empty();
+		// 					rpanelcommodities = data.rpanel_commodities;
+		// 				}
+		// 				$.each(data.commoditydetails,function(idx, commodity){
+		// 					if(commodity.com_is_coin !=1 && commodity.com_is_special !=1 && commodity.com_istrade !=1){
+		// 						var barimg = '<img src="http://www.bullionharvest.net/'+commodity.com_img_location+'" class="img-responsive gold_live1"/>';
+		// 						var tablerow = '<tr class="table4"><td class="ratevalue1">'+barimg+''+ commodity.com_name +'</td><td class="commodity_ratevalue3"><span></span></td><td class="commodity_ratevalue3"><span></span></td><td style="display:none;">' + commodity.deliverydays +'</td><td style="display:none;"><div class="com_id">'+ commodity.com_id + '</div><div class="com_type">'+ commodity.com_type + '</div><div class="com_weight">' + commodity.com_weight + '</div><div class="com_other_charges">'+ commodity.com_other_charges + '</div><div class="com_correction_type">' + commodity.com_correction_type + '</div><div class="com_sel_premium">' + commodity.com_sel_premium + '</div><div class="com_buy_premium">'+ commodity.com_buy_premium + '</div><div class="com_premium_type">'+ commodity.com_premium_type + '</div><div class="com_sel_active">' + commodity.com_sel_active + '</div><div class="com_buy_active">' + commodity.com_buy_active + '</div><div class="com_delverydays">'+ commodity.com_delverydays + '</div><div class="com_isregion">'+ commodity.com_isregion + '</div><div class="com_calpurity">' + commodity.com_calpurity + '</div><div class="com_tax">' + commodity.com_tax + '</div><div class="com_octroi">' + commodity.com_octroi + '</div><div class="com_stamduty">' + commodity.com_stamduty + '</div><div class="deliverydays">' + commodity.deliverydays + '</div><div class="displyname">' + commodity.displyname + '</div><div class="mcxsymbol">' + commodity.mcxsymbol + '</div><div class="banksymbol">' + commodity.banksymbol + '</div><div class="rcomid">' + commodity.rcomid + '</div><div class="trade_type">' + commodity.trade_type + '</div><div class="sell_diff">' + commodity.sell_diff + '</div><div class="buy_diff">' + commodity.buy_diff + '</div><div class="sell_rate">' + commodity.sell_rate + '</div><div class="com_display_purity">' + commodity.com_display_purity + '</div><div class="com_roundoff">'+ commodity.com_roundoff + '</div><div class="com_is_coin">'+ commodity.com_is_coin + '</div><div class="com_is_special">'+ commodity.com_is_special + '</div><div class="com_img_location">'+ commodity.com_img_location + '</div><div class="com_istrade">'+ commodity.com_istrade + '</div></td></tr>';
+		// 						$("#liveratetable tbody").append(tablerow);
+		// 					}
+		// 					if(commodity.com_is_coin ==1 && commodity.com_istrade !=1){
+		// 						var tablerow = '<tr class="table3"><td class="commodity_ratevalue">' + commodity.com_name +'</td><td class="commodity_ratevalue1"><span class="coin_rate"></span></td><td class="commodity_ratevalue1"><span class="coin_rate"></span></td><td style="display:none;">' + commodity.deliverydays +'</td><td style="display:none;"><div class="com_id">'+ commodity.com_id + '</div><div class="com_type">'+ commodity.com_type + '</div><div class="com_weight">' + commodity.com_weight + '</div><div class="com_other_charges">'+ commodity.com_other_charges + '</div><div class="com_correction_type">' + commodity.com_correction_type + '</div><div class="com_sel_premium">' + commodity.com_sel_premium + '</div><div class="com_buy_premium">'+ commodity.com_buy_premium + '</div><div class="com_premium_type">'+ commodity.com_premium_type + '</div><div class="com_sel_active">' + commodity.com_sel_active + '</div><div class="com_buy_active">' + commodity.com_buy_active + '</div><div class="com_delverydays">'+ commodity.com_delverydays + '</div><div class="com_isregion">'+ commodity.com_isregion + '</div><div class="com_calpurity">' + commodity.com_calpurity + '</div><div class="com_tax">' + commodity.com_tax + '</div><div class="com_octroi">' + commodity.com_octroi + '</div><div class="com_stamduty">' + commodity.com_stamduty + '</div><div class="deliverydays">' + commodity.deliverydays + '</div><div class="displyname">' + commodity.displyname + '</div><div class="mcxsymbol">' + commodity.mcxsymbol + '</div><div class="banksymbol">' + commodity.banksymbol + '</div><div class="rcomid">' + commodity.rcomid + '</div><div class="trade_type">' + commodity.trade_type + '</div><div class="sell_diff">' + commodity.sell_diff + '</div><div class="buy_diff">' + commodity.buy_diff + '</div><div class="sell_rate">' + commodity.sell_rate + '</div><div class="com_display_purity">' + commodity.com_display_purity + '</div><div class="com_roundoff">'+ commodity.com_roundoff + '</div><div class="com_is_coin">'+ commodity.com_is_coin + '</div><div class="com_is_special">'+ commodity.com_is_special + '</div><div class="com_img_location">'+ commodity.com_img_location + '</div><div class="com_istrade">'+ commodity.com_istrade + '</div></td></tr>';
+		// 						$("#liveratetable_coin tbody").append(tablerow);
+		// 					}
+		// 					if(commodity.com_is_special ==1 && commodity.com_istrade !=1){
+		// 						var tablerow = '<tr><td><h1>' + commodity.com_name +'</h1></td><td class="special_offer_rate"></td><td  style="display:none;"><h1></h1></td><td style="display:none;">' + commodity.deliverydays +'</td><td style="display:none;"><div class="com_id">'+ commodity.com_id + '</div><div class="com_type">'+ commodity.com_type + '</div><div class="com_weight">' + commodity.com_weight + '</div><div class="com_other_charges">'+ commodity.com_other_charges + '</div><div class="com_correction_type">' + commodity.com_correction_type + '</div><div class="com_sel_premium">' + commodity.com_sel_premium + '</div><div class="com_buy_premium">'+ commodity.com_buy_premium + '</div><div class="com_premium_type">'+ commodity.com_premium_type + '</div><div class="com_sel_active">' + commodity.com_sel_active + '</div><div class="com_buy_active">' + commodity.com_buy_active + '</div><div class="com_delverydays">'+ commodity.com_delverydays + '</div><div class="com_isregion">'+ commodity.com_isregion + '</div><div class="com_calpurity">' + commodity.com_calpurity + '</div><div class="com_tax">' + commodity.com_tax + '</div><div class="com_octroi">' + commodity.com_octroi + '</div><div class="com_stamduty">' + commodity.com_stamduty + '</div><div class="deliverydays">' + commodity.deliverydays + '</div><div class="displyname">' + commodity.displyname + '</div><div class="mcxsymbol">' + commodity.mcxsymbol + '</div><div class="banksymbol">' + commodity.banksymbol + '</div><div class="rcomid">' + commodity.rcomid + '</div><div class="trade_type">' + commodity.trade_type + '</div><div class="sell_diff">' + commodity.sell_diff + '</div><div class="buy_diff">' + commodity.buy_diff + '</div><div class="sell_rate">' + commodity.sell_rate + '</div><div class="com_display_purity">' + commodity.com_display_purity + '</div><div class="com_roundoff">'+ commodity.com_roundoff + '</div><div class="com_is_coin">'+ commodity.com_is_coin + '</div><div class="com_is_special">'+ commodity.com_is_special + '</div><div class="com_img_location">'+ commodity.com_img_location + '</div><div class="com_istrade">'+ commodity.com_istrade + '</div></td></tr>';
+		// 						$("#liveratetable_spl tbody").append(tablerow);
+		// 					}
+		// 				});
+
+		// 			},
+		// 			error: function(request,error){
+		// 				console.log(error);
+		// 			}
+		// 		});
+		// 	}
+		// });
+		var socket = io('http://69.16.249.136:3001/');
+		//var socket = new io.Socket('69.16.249.136', {port: 3001, rememberTransport: false});
+		/* socket.on('connect', function() {
+		console.log("Connected");
+    }); */
+		socket.on("bhtradeupdatecommodity:App\\Events\\BHTRADECommodityUpdates", function (data) {
+			rpanelcontract = data.updatedata.rpanel_contracts;
+			if (data.updatedata.commodity.length > 0) {
+				$("#liveratetable tbody").empty();
+				$("#liveratetable_coin tbody").empty();
+				$("#liveratetable_spl tbody").empty();
+			}
+			console.log(data.updatedata.commodity);
+			$.each(data.updatedata.commodity, function (idx, commodity) {
+				if (commodity.com_is_coin != 1 && commodity.com_is_special != 1 && commodity
+					.com_istrade != 1) {
+					var barimg = '<img src="http://www.#' + commodity
+						.com_img_location + '" class="img-responsive gold_live1"/>';
+					var tablerow = '<tr class="table4"><td class="ratevalue1">' + barimg + '' +
+						commodity.com_name +
+						'</td><td class="commodity_ratevalue3"><span></span></td><td class="commodity_ratevalue3"><span></span></td><td style="display:none;">' +
+						commodity.deliverydays +
+						'</td><td style="display:none;"><div class="com_id">' + commodity.com_id +
+						'</div><div class="com_type">' + commodity.com_type +
+						'</div><div class="com_weight">' + commodity.com_weight +
+						'</div><div class="com_other_charges">' + commodity.com_other_charges +
+						'</div><div class="com_correction_type">' + commodity.com_correction_type +
+						'</div><div class="com_sel_premium">' + commodity.com_sel_premium +
+						'</div><div class="com_buy_premium">' + commodity.com_buy_premium +
+						'</div><div class="com_premium_type">' + commodity.com_premium_type +
+						'</div><div class="com_sel_active">' + commodity.com_sel_active +
+						'</div><div class="com_buy_active">' + commodity.com_buy_active +
+						'</div><div class="com_delverydays">' + commodity.com_delverydays +
+						'</div><div class="com_isregion">' + commodity.com_isregion +
+						'</div><div class="com_calpurity">' + commodity.com_calpurity +
+						'</div><div class="com_tax">' + commodity.com_tax +
+						'</div><div class="com_octroi">' + commodity.com_octroi +
+						'</div><div class="com_stamduty">' + commodity.com_stamduty +
+						'</div><div class="deliverydays">' + commodity.deliverydays +
+						'</div><div class="displyname">' + commodity.displyname +
+						'</div><div class="mcxsymbol">' + commodity.mcxsymbol +
+						'</div><div class="banksymbol">' + commodity.banksymbol +
+						'</div><div class="rcomid">' + commodity.rcomid +
+						'</div><div class="trade_type">' + commodity.trade_type +
+						'</div><div class="sell_diff">' + commodity.sell_diff +
+						'</div><div class="buy_diff">' + commodity.buy_diff +
+						'</div><div class="sell_rate">' + commodity.sell_rate +
+						'</div><div class="com_display_purity">' + commodity.com_display_purity +
+						'</div><div class="com_roundoff">' + commodity.com_roundoff +
+						'</div><div class="com_is_coin">' + commodity.com_is_coin +
+						'</div><div class="com_is_special">' + commodity.com_is_special +
+						'</div><div class="com_img_location">' + commodity.com_img_location +
+						'</div><div class="com_istrade">' + commodity.com_istrade +
+						'</div></td></tr>';
+					$("#liveratetable tbody").append(tablerow);
+				}
+				if (commodity.com_is_coin == 1 && commodity.com_istrade != 1) {
+					var tablerow = '<tr class="table3"><td class="commodity_ratevalue">' +
+						commodity.com_name +
+						'</td><td class="commodity_ratevalue1"><span class="coin_rate"></span></td><td class="commodity_ratevalue1"><span class="coin_rate"></span></td><td style="display:none;">' +
+						commodity.deliverydays +
+						'</td><td style="display:none;"><div class="com_id">' + commodity.com_id +
+						'</div><div class="com_type">' + commodity.com_type +
+						'</div><div class="com_weight">' + commodity.com_weight +
+						'</div><div class="com_other_charges">' + commodity.com_other_charges +
+						'</div><div class="com_correction_type">' + commodity.com_correction_type +
+						'</div><div class="com_sel_premium">' + commodity.com_sel_premium +
+						'</div><div class="com_buy_premium">' + commodity.com_buy_premium +
+						'</div><div class="com_premium_type">' + commodity.com_premium_type +
+						'</div><div class="com_sel_active">' + commodity.com_sel_active +
+						'</div><div class="com_buy_active">' + commodity.com_buy_active +
+						'</div><div class="com_delverydays">' + commodity.com_delverydays +
+						'</div><div class="com_isregion">' + commodity.com_isregion +
+						'</div><div class="com_calpurity">' + commodity.com_calpurity +
+						'</div><div class="com_tax">' + commodity.com_tax +
+						'</div><div class="com_octroi">' + commodity.com_octroi +
+						'</div><div class="com_stamduty">' + commodity.com_stamduty +
+						'</div><div class="deliverydays">' + commodity.deliverydays +
+						'</div><div class="displyname">' + commodity.displyname +
+						'</div><div class="mcxsymbol">' + commodity.mcxsymbol +
+						'</div><div class="banksymbol">' + commodity.banksymbol +
+						'</div><div class="rcomid">' + commodity.rcomid +
+						'</div><div class="trade_type">' + commodity.trade_type +
+						'</div><div class="sell_diff">' + commodity.sell_diff +
+						'</div><div class="buy_diff">' + commodity.buy_diff +
+						'</div><div class="sell_rate">' + commodity.sell_rate +
+						'</div><div class="com_display_purity">' + commodity.com_display_purity +
+						'</div><div class="com_roundoff">' + commodity.com_roundoff +
+						'</div><div class="com_is_coin">' + commodity.com_is_coin +
+						'</div><div class="com_is_special">' + commodity.com_is_special +
+						'</div><div class="com_img_location">' + commodity.com_img_location +
+						'</div><div class="com_istrade">' + commodity.com_istrade +
+						'</div></td></tr>';
+					$("#liveratetable_coin tbody").append(tablerow);
+				}
+				if (commodity.com_is_special == 1 && commodity.com_istrade != 1) {
+					var tablerow = '<tr><td><h1>' + commodity.com_name +
+						'</h1></td><td class="special_offer_rate"></td><td  style="display:none;"><h1></h1></td><td style="display:none;">' +
+						commodity.deliverydays +
+						'</td><td style="display:none;"><div class="com_id">' + commodity.com_id +
+						'</div><div class="com_type">' + commodity.com_type +
+						'</div><div class="com_weight">' + commodity.com_weight +
+						'</div><div class="com_other_charges">' + commodity.com_other_charges +
+						'</div><div class="com_correction_type">' + commodity.com_correction_type +
+						'</div><div class="com_sel_premium">' + commodity.com_sel_premium +
+						'</div><div class="com_buy_premium">' + commodity.com_buy_premium +
+						'</div><div class="com_premium_type">' + commodity.com_premium_type +
+						'</div><div class="com_sel_active">' + commodity.com_sel_active +
+						'</div><div class="com_buy_active">' + commodity.com_buy_active +
+						'</div><div class="com_delverydays">' + commodity.com_delverydays +
+						'</div><div class="com_isregion">' + commodity.com_isregion +
+						'</div><div class="com_calpurity">' + commodity.com_calpurity +
+						'</div><div class="com_tax">' + commodity.com_tax +
+						'</div><div class="com_octroi">' + commodity.com_octroi +
+						'</div><div class="com_stamduty">' + commodity.com_stamduty +
+						'</div><div class="deliverydays">' + commodity.deliverydays +
+						'</div><div class="displyname">' + commodity.displyname +
+						'</div><div class="mcxsymbol">' + commodity.mcxsymbol +
+						'</div><div class="banksymbol">' + commodity.banksymbol +
+						'</div><div class="rcomid">' + commodity.rcomid +
+						'</div><div class="trade_type">' + commodity.trade_type +
+						'</div><div class="sell_diff">' + commodity.sell_diff +
+						'</div><div class="buy_diff">' + commodity.buy_diff +
+						'</div><div class="sell_rate">' + commodity.sell_rate +
+						'</div><div class="com_display_purity">' + commodity.com_display_purity +
+						'</div><div class="com_roundoff">' + commodity.com_roundoff +
+						'</div><div class="com_is_coin">' + commodity.com_is_coin +
+						'</div><div class="com_is_special">' + commodity.com_is_special +
+						'</div><div class="com_img_location">' + commodity.com_img_location +
+						'</div><div class="com_istrade">' + commodity.com_istrade +
+						'</div></td></tr>';
+					$("#liveratetable_spl tbody").append(tablerow);
+				}
+			});
+		});
+		
+		socket.on("bhtradeupdatemarquee:App\\Events\\BHTRADEMarqueeUpdates", function (data) {
+			$("#marquee").html("");
+			$("#marquee").append(
+				"<marquee scrollamount='4' onmouseover='this.stop();' onmouseout='this.start();' >" +
+				decodeURIComponent((data.updatedata.mrq_text + '').replace(/\+/g, '%20')) +
+				"</marquee>");
+		});
+		socket.on("bhtradeupdatenews:App\\Events\\BHTRADENewsUpdates", function (data) {
+			$("#newsevents").html("");
+			$("#newsevents").append(
+				'<marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="2" align="middle" style="height: 165px; padding-left: 2px;">' +
+				data.updatedata.news + '</marquee>');
+		});
+	});
+
+	function gold_spotrateconversion(con_value, com_weight) {
+		return parseFloat((con_value / 1000) * com_weight).toFixed(2);
+	}
+
+	function gold_conversion(con_value, com_weight) {
+		return parseFloat((con_value / 10) * com_weight).toFixed(2);
+	}
+
+	function silver_conversion(con_value, com_weight) {
+		return parseFloat((con_value / 1000) * com_weight).toFixed(2);
+	}
+
+	function manual_roundoff(round_value, round_method, type) {
+		var convert_value = 0;
+		if (type == 'ask') {
+			convert_value = Math.ceil(round_value / round_method) * round_method;
+		} else {
+			convert_value = Math.floor(round_value / round_method) * round_method;
+		}
+		return parseFloat(convert_value).toFixed(2);
+	}
+
+	function fnStartClock() {
+
+		try {
+			//alert("fnStartClock");
+			refreshData();
+			oInterval = setInterval("refreshData()", 800);
+		} catch (e) {
+			//alert("fnStartClock" + e);
+		}
+	}
+
+	function refreshData() {
+		CallWebServiceFromJquery();
+	}
+
+	
+
+	function CallWebServiceFromJquery() {
+		try {
+			//alert('CallWebServiceFromJquery');
+			jQuery.ajax({
+				type: "POST",
+				url: "http://13.126.240.225/lmxtrade/winbullliteapi/api/v1/broadcastrates",
+				dataType: "text",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				data: JSON.stringify({
+					"client": "bhtrade"
+				}),
+				crossDomain: true,
+				processData: false,
+				success: OnSuccess,
+				error: OnError,
+				cache: false
+			});
+		} catch (e) {
+			//alert("CallWebServiceFromJquery " + e);
+		}
+
+	}
+
+	function OnError(request, status, error) {
+		//alert("Webservice Error: " + request.statusText + " " + error);
+	}
+
+	function getCurrentDateTime() {
+
+		var currentdate = new Date();
+		var datetime = currentdate.getDate() + "-" +
+			(currentdate.getMonth() + 1) + "-" +
+			currentdate.getFullYear() + " @ " +
+			currentdate.getHours() + ":";
+
+		if (currentdate.getMinutes() < 10) {
+			datetime = datetime + "0" + currentdate.getMinutes() + ":";
+		} else {
+			datetime = datetime + currentdate.getMinutes() + ":";
+		}
+
+		if (currentdate.getSeconds() < 10) {
+			datetime = datetime + "0" + currentdate.getSeconds();
+		} else {
+			datetime = datetime + currentdate.getSeconds();
+		}
+
+
+		return datetime;
+	}
+
+	function OnSuccess(data, status) {
+		//console.log("Onsuccess");
+		try {
+			var $ = jQuery.noConflict();
+			//console.log("Onsuccesstry");
+			var datetime = getCurrentDateTime();
+
+			var messagesDesktopp = "";
+			messagesDesktopp = data.split("\n");
+			//alert(messagesDesktopp.length);
+			if (typeof oldData == 'undefined') {
+				oldData = data.toString();
+			}
+			var messagesOldDesktop = oldData.split("\n");
+			for (var i = 0; i < messagesDesktopp.length; i++) {
+				var retDesktop = messagesDesktopp[i].split("\t");
+				var oldRetDesktop;
+				oldRetDesktop = messagesOldDesktop[i].split("\t");
+				if (typeof retDesktop[1] != 'undefined') {
+					if (retDesktop[0] == 3) {
+						$("#liveratetable").find('tbody > tr').each(function (i, el) {
+							var com_id = parseInt($(this).find('td:last div:eq(0)').html()),
+								com_type = parseInt($(this).find('td:last div:eq(1)').html()),
+								com_weight = parseFloat($(this).find('td:last div:eq(2)').html()),
+								com_sel_active = parseInt($(this).find('td:last div:eq(8)').html()),
+								com_buy_active = parseInt($(this).find('td:last div:eq(9)').html()),
+								prem_comsell_active = parseFloat($(this).find('td:last div:eq(42)').html()),
+								prem_combuy_active = parseFloat($(this).find('td:last div:eq(43)').html());
+							if (retDesktop[1] == com_id) {
+								var selling_rate = retDesktop[4];
+								var buying_rate = retDesktop[3];
+								if (prem_comsell_active == 0) {
+									selling_rate = '-';
+								}
+								if (prem_combuy_active == 0) {
+									buying_rate = '-';
+								}
+								if (buying_rate > parseFloat($(this).find('td:eq(1) span:eq(0)').html())) {
+									$(this).find('td:eq(1) span:eq(0)').css('color', '#228b22');
+									$(this).find('td:eq(1) span:eq(0)').css('background-color', '#FFFFFF');
+									$(this).find('td:eq(1) span:eq(0)').addClass('arrow-green');
+									$(this).find('td:eq(1) span:eq(0)').removeClass('arrow-red');
+									$(this).find('td:eq(1) span:eq(0)').removeClass('arrow-white');
+								} else if (buying_rate < parseFloat($(this).find('td:eq(1) span:eq(0)').html())) {
+									$(this).find('td:eq(1) span:eq(0)').css('color', '#FF0000');
+									$(this).find('td:eq(1) span:eq(0)').css('background-color', '#FFFFFF');
+									$(this).find('td:eq(1) span:eq(0)').removeClass('arrow-green');
+									$(this).find('td:eq(1) span:eq(0)').addClass('arrow-red');
+									$(this).find('td:eq(1) span:eq(0)').removeClass('arrow-white');
+								} else {
+									$(this).find('td:eq(1) span:eq(0)').css('color', '#000000');
+									$(this).find('td:eq(1) span:eq(0)').css('background-color', '#FFFFFF');
+									$(this).find('td:eq(1) span:eq(0)').removeClass('arrow-green');
+									$(this).find('td:eq(1) span:eq(0)').removeClass('arrow-red');
+									$(this).find('td:eq(1) span:eq(0)').addClass('arrow-white');
+								}
+								$(this).find('td:eq(1) span:eq(0)').html(buying_rate);
+
+								if (selling_rate > parseFloat($(this).find('td:eq(2) span:eq(0)').html())) {
+									$(this).find('td:eq(2) span:eq(0)').css('color', '#228b22');
+									$(this).find('td:eq(2) span:eq(0)').css('background-color', '#FFFFFF');
+									$(this).find('td:eq(2) span:eq(0)').addClass('arrow-green');
+									$(this).find('td:eq(2) span:eq(0)').removeClass('arrow-red');
+									$(this).find('td:eq(2) span:eq(0)').removeClass('arrow-white');
+								} else if (selling_rate < parseFloat($(this).find('td:eq(2) span:eq(0)').html())) {
+									$(this).find('td:eq(2) span:eq(0)').css('color', '#FF0000');
+									$(this).find('td:eq(2) span:eq(0)').css('background-color', '#FFFFFF');
+									$(this).find('td:eq(2) span:eq(0)').removeClass('arrow-green');
+									$(this).find('td:eq(2) span:eq(0)').addClass('arrow-red');
+									$(this).find('td:eq(2) span:eq(0)').removeClass('arrow-white');
+								} else {
+									$(this).find('td:eq(2) span:eq(0)').css('color', '#000000');
+									$(this).find('td:eq(2) span:eq(0)').css('background-color', '#FFFFFF');
+									$(this).find('td:eq(2) span:eq(0)').removeClass('arrow-green');
+									$(this).find('td:eq(2) span:eq(0)').removeClass('arrow-red');
+									$(this).find('td:eq(2) span:eq(0)').addClass('arrow-white');
+								}
+								$(this).find('td:eq(2) span:eq(0)').html(selling_rate);
+
+							}
+						});
+
+						$("#liveratetable_spl").find('tbody > tr').each(function (i, el) {
+							var com_id = parseInt($(this).find('td:last div:eq(0)').html()),
+								com_is_special = parseFloat($(this).find('td:last div:eq(28)').html()),
+								com_istrade = parseFloat($(this).find('td:last div:eq(30)').html());
+
+							if (retDesktop[1] == com_id) {
+								var selling_rate = retDesktop[4];
+								var buying_rate = retDesktop[3];
+
+								if (com_is_special == 1 && com_istrade == 0) {
+									$(this).find('td:eq(2) span:eq(0)').html(selling_rate);
+
+									if (selling_rate > parseFloat($(this).find('td:eq(1)').html())) {
+										$(this).find('td:eq(1)').css('color', '#008000');
+										$(this).find('td:eq(1)').css('background-color', '');
+									} else if (selling_rate < parseFloat($(this).find('td:eq(1)').html())) {
+										$(this).find('td:eq(1)').css('color', '#FF0000');
+										$(this).find('td:eq(1)').css('background-color', '');
+									} else {
+										$(this).find('td:eq(1)').css('color', '');
+										$(this).find('td:eq(1)').css('background', '');
+									}
+									$(this).find('td:eq(1)').html(selling_rate);
+
+								}
+							}
+						});
+					}
+				}
+			}
+
+			$("#liveratetable2 tbody").empty();
+			for (var i = 0; i < messagesDesktopp.length; i++) {
+				var retDesktop = messagesDesktopp[i].split("\t");
+				var oldRetDesktop;
+				oldRetDesktop = messagesOldDesktop[i].split("\t");
+				//console.log(oldRetDesktop);
+				if (typeof retDesktop[1] != 'undefined' && (retDesktop[0] == 4 || retDesktop[0] == 1 || retDesktop[0] ==
+						2)) {
+					if (retDesktop[0] == 4) {
+						if ((retDesktop[3] == 0 || retDesktop[4] == 1)) {
+							market_status = 0;
+							if (retDesktop[3] == 0) {
+								document.getElementById("onoffmessage").style.display = "block";
+								document.getElementById("messagebox").style.display = "none";
+								document.getElementById("divrate").style.display = "none";
+							} else if (retDesktop[4] == 1) {
+								document.getElementById("onoffmessage").style.display = "none";
+								document.getElementById("divrate").style.display = "none";
+								document.getElementById("messagebox").style.display = "block";
+								$("#messageboxtext").html(retDesktop[5]);
+							}
+						} else {
+							market_status = 1;
+							document.getElementById("onoffmessage").style.display = "none";
+							document.getElementById("messagebox").style.display = "none";
+							document.getElementById("divrate").style.display = "block";
+						}
+					}
+					/* if(market_status == 1){
+						if(retDesktop[0] == 3){
+							
+						}
+					} */
+					if (retDesktop[0] == 1) {
+						if (retDesktop[1] == "SPOT-GOLD") {
+							if (retDesktop[3] > $("#gold_bid").html()) {
+								$("#gold_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#gold_bid").html()) {
+								$("#gold_bid").css('color', '#FF0000');
+							} else {
+								$("#gold_bid").css('color', '');
+							}
+							$("#gold_bid").html(parseFloat(retDesktop[3]).toFixed(2));
+							if (retDesktop[4] > $("#gold_ask").html()) {
+								$("#gold_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#gold_ask").html()) {
+								$("#gold_ask").css('color', '#FF0000');
+							} else {
+								$("#gold_ask").css('color', '');
+							}
+							$("#gold_ask").html(parseFloat(retDesktop[4]).toFixed(2));
+							if (retDesktop[5] > $(".gold_high").html()) {
+								$(".gold_high").css('color', '#008000');
+							} else if (retDesktop[5] < $(".gold_high").html()) {
+								$(".gold_high").css('color', '#FF0000');
+							} else {
+								$(".gold_high").css('color', '');
+							}
+							$(".gold_high").html(parseFloat(retDesktop[5]).toFixed(2));
+							if (retDesktop[6] > $(".gold_low").html()) {
+								$(".gold_low").css('color', '#008000');
+							} else if (retDesktop[6] < $("#gold_low").html()) {
+								$(".gold_low").css('color', '#FF0000');
+							} else {
+								$(".gold_low").css('color', '');
+							}
+							$(".gold_low").html(parseFloat(retDesktop[6]).toFixed(2));
+						} else if (retDesktop[1] == "SPOT-SILVER") {
+							if (retDesktop[3] > $("#silver_bid").html()) {
+								$("#silver_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#silver_bid").html()) {
+								$("#silver_bid").css('color', '#FF0000');
+							} else {
+								$("#silver_bid").css('color', '');
+							}
+							$("#silver_bid").html(parseFloat(retDesktop[3]).toFixed(2));
+							if (retDesktop[4] > $("#silver_ask").html()) {
+								$("#silver_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#silver_ask").html()) {
+								$("#silver_ask").css('color', '#FF0000');
+							} else {
+								$("#silver_ask").css('color', '');
+							}
+							$("#silver_ask").html(parseFloat(retDesktop[4]).toFixed(2));
+							if (retDesktop[5] > $(".silver_high").html()) {
+								$(".silver_high").css('color', '#008000');
+							} else if (retDesktop[5] < $("#silver_high").html()) {
+								$(".silver_high").css('color', '#FF0000');
+							} else {
+								$(".silver_high").css('color', '');
+							}
+							$(".silver_high").html(parseFloat(retDesktop[5]).toFixed(2));
+							if (retDesktop[6] > $(".silver_low").html()) {
+								$(".silver_low").css('color', '#008000');
+							} else if (retDesktop[6] < $("#silver_low").html()) {
+								$(".silver_low").css('color', '#FF0000');
+							} else {
+								$(".silver_low").css('color', '');
+							}
+							$(".silver_low").html(parseFloat(retDesktop[6]).toFixed(2));
+						} else if (retDesktop[1] == "SPOT-INR") {
+
+							if (retDesktop[3] > $("#inr_bid").html()) {
+								$("#inr_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#inr_bid").html()) {
+								$("#inr_bid").css('color', '#FF0000');
+							} else {
+								$("#inr_bid").css('color', '');
+							}
+							$("#inr_bid").html(parseFloat(retDesktop[3]).toFixed(3));
+							if (retDesktop[4] > $("#inr_ask").html()) {
+								$("#inr_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#inr_ask").html()) {
+								$("#inr_ask").css('color', '#FF0000');
+							} else {
+								$("#inr_ask").css('color', '');
+							}
+							$("#inr_ask").html(parseFloat(retDesktop[4]).toFixed(3));
+							if (retDesktop[5] > $(".inr_high").html()) {
+								$(".inr_high").css('color', '#008000');
+							} else if (retDesktop[5] < $(".inr_high").html()) {
+								$(".inr_high").css('color', '#FF0000');
+							} else {
+								$(".inr_high").css('color', '');
+							}
+							$(".inr_high").html(parseFloat(retDesktop[5]).toFixed(3));
+							if (retDesktop[6] > $(".inr_low").html()) {
+								$(".inr_low").css('color', '#008000');
+							} else if (retDesktop[6] < $(".inr_low").html()) {
+								$(".inr_low").css('color', '#FF0000');
+							} else {
+								$(".inr_low").css('color', '');
+							}
+							$(".inr_low").html(parseFloat(retDesktop[6]).toFixed(3));
+						} else if (retDesktop[1] == "SIN") {
+
+							if (retDesktop[3] > $("#sgd_bid").html()) {
+								$("#sgd_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#sgd_bid").html()) {
+								$("#sgd_bid").css('color', '#FF0000');
+							} else {
+								$("#sgd_bid").css('color', '');
+							}
+							$("#sgd_bid").html(parseFloat(retDesktop[3]).toFixed(4));
+							if (retDesktop[4] > $("#sgd_ask").html()) {
+								$("#sgd_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#sgd_ask").html()) {
+								$("#sgd_ask").css('color', '#FF0000');
+							} else {
+								$("#sgd_ask").css('color', '');
+							}
+							$("#sgd_ask").html(parseFloat(retDesktop[4]).toFixed(4));
+							if (retDesktop[5] > $(".sgd_high").html()) {
+								$(".sgd_high").css('color', '.008000');
+							} else if (retDesktop[5] < $(".sgd_high").html()) {
+								$(".sgd_high").css('color', '.FF0000');
+							} else {
+								$(".sgd_high").css('color', '');
+							}
+							$(".sgd_high").html(parseFloat(retDesktop[5]).toFixed(4));
+							if (retDesktop[6] > $(".sgd_low").html()) {
+								$(".sgd_low").css('color', '#008000');
+							} else if (retDesktop[6] < $(".sgd_low").html()) {
+								$(".sgd_low").css('color', '#FF0000');
+							} else {
+								$(".sgd_low").css('color', '');
+							}
+							$(".sgd_low").html(parseFloat(retDesktop[6]).toFixed(4));
+						} else if (retDesktop[1] == "SININD") {
+
+							if (retDesktop[3] > $("#singinr_bid").html()) {
+								$("#singinr_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#singinr_bid").html()) {
+								$("#singinr_bid").css('color', '#FF0000');
+							} else {
+								$("#singinr_bid").css('color', '');
+							}
+							$("#singinr_bid").html(parseFloat(retDesktop[3]).toFixed(4));
+							if (retDesktop[4] > $("#singinr_ask").html()) {
+								$("#singinr_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#singinr_ask").html()) {
+								$("#singinr_ask").css('color', '#FF0000');
+							} else {
+								$("#singinr_ask").css('color', '');
+							}
+							$("#singinr_ask").html(parseFloat(retDesktop[4]).toFixed(4));
+							if (retDesktop[5] > $(".singinr_high").html()) {
+								$(".singinr_high").css('color', '#008000');
+							} else if (retDesktop[5] < $(".singinr_high").html()) {
+								$(".singinr_high").css('color', '#FF0000');
+							} else {
+								$(".singinr_high").css('color', '');
+							}
+							$(".singinr_high").html(parseFloat(retDesktop[5]).toFixed(4));
+							if (retDesktop[6] > $(".singinr_low").html()) {
+								$(".singinr_low").css('color', '#008000');
+							} else if (retDesktop[6] < $(".singinr_low").html()) {
+								$(".singinr_low").css('color', '#FF0000');
+							} else {
+								$(".singinr_low").css('color', '');
+							}
+							$(".singinr_low").html(parseFloat(retDesktop[6]).toFixed(4));
+						} else if (retDesktop[1] == "CRUDE") {
+
+							if (retDesktop[3] > $("#curde_bid").html()) {
+								$("#curde_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#curde_bid").html()) {
+								$("#curde_bid").css('color', '#FF0000');
+							} else {
+								$("#curde_bid").css('color', '');
+							}
+							$("#curde_bid").html(parseFloat(retDesktop[3]).toFixed(2));
+							if (retDesktop[4] > $("#curde_ask").html()) {
+								$("#curde_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#curde_ask").html()) {
+								$("#curde_ask").css('color', '#FF0000');
+							} else {
+								$("#curde_ask").css('color', '');
+							}
+							$("#curde_ask").html(parseFloat(retDesktop[4]).toFixed(2));
+							if (retDesktop[5] > $(".curde_high").html()) {
+								$(".curde_high").css('color', '#008000');
+							} else if (retDesktop[5] < $(".curde_high").html()) {
+								$(".curde_high").css('color', '#FF0000');
+							} else {
+								$(".curde_high").css('color', '');
+							}
+							$(".curde_high").html(parseFloat(retDesktop[5]).toFixed(2));
+							if (retDesktop[6] > $(".curde_low").html()) {
+								$(".curde_low").css('color', '#008000');
+							} else if (retDesktop[6] < $(".curde_low").html()) {
+								$(".curde_low").css('color', '#FF0000');
+							} else {
+								$(".curde_low").css('color', '');
+							}
+							$(".curde_low").html(parseFloat(retDesktop[6]).toFixed(2));
+						} else if (retDesktop[1] == "EUROUSD") {
+
+							if (retDesktop[3] > $("#sgd_bid").html()) {
+								$("#eurousd_bid").css('color', '#008000');
+							} else if (retDesktop[3] < $("#eurousd_bid").html()) {
+								$("#eurousd_bid").css('color', '#FF0000');
+							} else {
+								$("#eurousd_bid").css('color', '');
+							}
+							$("#eurousd_bid").html(parseFloat(retDesktop[3]).toFixed(4));
+							if (retDesktop[4] > $("#eurousd_ask").html()) {
+								$("#eurousd_ask").css('color', '#008000');
+							} else if (retDesktop[4] < $("#eurousd_ask").html()) {
+								$("#eurousd_ask").css('color', '#FF0000');
+							} else {
+								$("#eurousd_ask").css('color', '');
+							}
+							$("#eurousd_ask").html(parseFloat(retDesktop[4]).toFixed(4));
+							if (retDesktop[5] > $(".eurousd_high").html()) {
+								$(".eurousd_high").css('color', '#008000');
+							} else if (retDesktop[5] < $(".eurousd_high").html()) {
+								$(".eurousd_high").css('color', '#FF0000');
+							} else {
+								$(".eurousd_high").css('color', '');
+							}
+							$(".eurousd_high").html(parseFloat(retDesktop[5]).toFixed(4));
+							if (retDesktop[6] > $(".eurousd_low").html()) {
+								$(".eurousd_low").css('color', '#008000');
+							} else if (retDesktop[6] < $(".eurousd_low").html()) {
+								$(".eurousd_low").css('color', '#FF0000');
+							} else {
+								$(".eurousd_low").css('color', '');
+							}
+							$(".eurousd_low").html(parseFloat(retDesktop[6]).toFixed(4));
+						}
+					}
+					if (retDesktop[0] == 2) {
+						var mcxbidid = "mcxbidnew-" + i;
+						var mcxaskid = "mcxasknew-" + i;
+						var mcxhighid = "mcxhighnew-" + i;
+						var mcxlowid = "mcxlownew-" + i;
+
+						var tablerow = '<tr class="table1"><td><div class="mcxdesc">' + retDesktop[2] +
+							'</div></td><td  class="ratevalue2"><div class="txtlabel" id="' + mcxbidid + '"><span>' +
+							retDesktop[3] + '</span></div></td><td  class="ratevalue2"><div class="txtlabel" id="' +
+							mcxaskid + '"><span>' + retDesktop[4] +
+							'</span></div></td><td class="ratevalue11"><span>H :</span><span class="txtlabel" id="' +
+							mcxhighid + '">' + retDesktop[5] + '</span><br><span>L :</span><span class="txtlabel" id="' +
+							mcxlowid + '">' + retDesktop[6] + '</span></td></tr>';
+
+						/* var tablerow ='<th></th><th width="34%" class="ratevalue"><div id="mcxdesc">'+retDesktop[2]+'</div><div class="ratevalue_rate"><span class="bidvalue" id="'+mcxbidid+'">'+retDesktop[3]+'</span> | <span id="'+mcxaskid+'">'+retDesktop[4]+'</span><br><div class="highlowvalue">H: <span id="'+mcxhighid+'">'+retDesktop[5]+'</span> | L: <span id="'+mcxlowid+'">'+retDesktop[6]+'</span></div></div></th><th></th>'; */
+						$("#liveratetable2 tbody").append(tablerow);
+
+						if (oldRetDesktop[1] == retDesktop[1]) {
+							if (parseInt(oldRetDesktop[3]) > parseInt(retDesktop[3])) {
+								$("#" + mcxbidid).css('color', '#FFFFFF');
+								$("#" + mcxbidid).css('background-color', '#FF0000');
+							} else if (parseInt(oldRetDesktop[3]) < parseInt(retDesktop[3])) {
+								$("#" + mcxbidid).css('color', '#FFFFFF');
+								$("#" + mcxbidid).css('background-color', '#008000');
+							} else {
+								$("#" + mcxbidid).css('color', '');
+								$("#" + mcxbidid).css('background-color', '');
+							}
+							if (parseInt(oldRetDesktop[4]) > parseInt(retDesktop[4])) {
+								$("#" + mcxaskid).css('color', '#FFFFFF');
+								$("#" + mcxaskid).css('background-color', '#FF0000');
+							} else if (parseInt(oldRetDesktop[4]) < parseInt(retDesktop[4])) {
+								$("#" + mcxaskid).css('color', '#FFFFFF');
+								$("#" + mcxaskid).css('background-color', '#008000');
+							} else {
+								$("#" + mcxaskid).css('color', '');
+								$(mcxaskid).css('background-color', '');
+							}
+							if (parseInt(oldRetDesktop[5]) > parseInt(retDesktop[5])) {
+								$("#" + mcxhighid).css('color', '#FFFFFF');
+								$("#" + mcxhighid).css('background-color', '#FF0000');
+							} else if (parseInt(oldRetDesktop[5]) < parseInt(retDesktop[5])) {
+								$("#" + mcxhighid).css('color', '#FFFFFF');
+								$("#" + mcxhighid).css('background-color', '#008000');
+							} else {
+								$("#" + mcxhighid).css('color', '');
+								$("#" + mcxhighid).css('background-color', '');
+							}
+							if (parseInt(oldRetDesktop[6]) > parseInt(retDesktop[6])) {
+								$("#" + mcxlowid).css('color', '#FFFFFF');
+								$("#" + mcxlowid).css('background-color', '#FF0000');
+							} else if (parseInt(oldRetDesktop[6]) < parseInt(retDesktop[6])) {
+								$("#" + mcxlowid).css('color', '#FFFFFF');
+								$("#" + mcxlowid).css('background-color', '#008000');
+							} else {
+								$("#" + mcxlowid).css('color', '');
+								$("#" + mcxlowid).css('background-color', '');
+							}
+						}
+					}
+				}
+			}
+
+			oldData = data.toString();
+
+			//GOLD S$ Rate calculions Start Here
+			var Spotgold_bid_val = isNaN($('#gold_bid').html()) ? 0 : parseFloat($('#gold_bid').html());
+			var sgd_bid_val = isNaN($('#sgd_bid').html()) ? 0 : parseFloat($('#sgd_bid').html());
+			var sgd_ask_val = isNaN($('#sgd_ask').html()) ? 0 : parseFloat($('#sgd_ask').html());
+			if ($('.GoldSdoll_bid_val').html() > parseFloat(parseFloat(Spotgold_bid_val) * parseFloat(sgd_bid_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_bid_val").css('color', '#008000');
+				$(".GoldSdoll_bid_val").css('background-color', '');
+			} else if ($('.GoldSdoll_bid_val').html() < parseFloat(parseFloat(Spotgold_bid_val) * parseFloat(sgd_bid_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_bid_val").css('color', '#FF0000');
+				$(".GoldSdoll_bid_val").css('background-color', '');
+			} else {
+				$(".GoldSdoll_bid_val").css('color', '');
+				$(".GoldSdoll_bid_val").css('background-color', '');
+			}
+			$('.GoldSdoll_bid_val').html(parseFloat(parseFloat(Spotgold_bid_val) * parseFloat(sgd_bid_val)).toFixed(2));
+			var Spotgold_ask_val = isNaN($('#gold_ask').html()) ? 0 : parseFloat($('#gold_ask').html());
+
+			if ($('.GoldSdoll_ask_val').html() > parseFloat(parseFloat(Spotgold_ask_val) * parseFloat(sgd_ask_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_ask_val").css('color', '#008000');
+				$(".GoldSdoll_ask_val").css('background-color', '');
+			} else if ($('.GoldSdoll_ask_val').html() < parseFloat(parseFloat(Spotgold_ask_val) * parseFloat(sgd_ask_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_ask_val").css('color', '#FF0000');
+				$(".GoldSdoll_ask_val").css('background-color', '');
+			} else {
+				$(".GoldSdoll_ask_val").css('color', '');
+				$(".GoldSdoll_ask_val").css('background-color', '');
+			}
+			$('.GoldSdoll_ask_val').html(parseFloat(parseFloat(Spotgold_ask_val) * parseFloat(sgd_ask_val)).toFixed(2));
+			var Spotgold_high_val = isNaN($('.gold_high').html()) ? 0 : parseFloat($('.gold_high').html());
+			var sgd_high_val = isNaN($('.sgd_high').html()) ? 0 : parseFloat($('.sgd_high').html());
+			if ($('.GoldSdoll_high_val').html() > parseFloat(parseFloat(Spotgold_high_val) * parseFloat(sgd_high_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_high_val").css('color', '#008000');
+				$(".GoldSdoll_high_val").css('background-color', '');
+			} else if ($('.GoldSdoll_high_val').html() < parseFloat(parseFloat(Spotgold_high_val) * parseFloat(
+					sgd_high_val)).toFixed(2)) {
+				$(".GoldSdoll_high_val").css('color', '#FF0000');
+				$(".GoldSdoll_high_val").css('background-color', '');
+			} else {
+				$(".GoldSdoll_high_val").css('color', '');
+				$(".GoldSdoll_high_val").css('background-color', '');
+			}
+			$('.GoldSdoll_high_val').html(parseFloat(parseFloat(Spotgold_high_val) * parseFloat(sgd_high_val)).toFixed(2));
+			var Spotgold_low_val = isNaN($('.gold_low').html()) ? 0 : parseFloat($('.gold_low').html());
+			var sgd_low_val = isNaN($('.sgd_low').html()) ? 0 : parseFloat($('.sgd_low').html());
+			if ($('.GoldSdoll_low_val').html() > parseFloat(parseFloat(Spotgold_low_val) * parseFloat(sgd_low_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_low_val").css('color', '#008000');
+				$(".GoldSdoll_low_val").css('background-color', '');
+			} else if ($('.GoldSdoll_low_val').html() < parseFloat(parseFloat(Spotgold_low_val) * parseFloat(sgd_low_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_low_val").css('color', '#FF0000');
+				$(".GoldSdoll_low_val").css('background-color', '');
+			} else {
+				$(".GoldSdoll_low_val").css('color', '');
+				$(".GoldSdoll_low_val").css('background-color', '');
+			}
+			$('.GoldSdoll_low_val').html(parseFloat(parseFloat(Spotgold_low_val) * parseFloat(sgd_low_val)).toFixed(2));
+			var Spotgold_ltp_val = isNaN($('#gold_ltp').html()) ? 0 : parseFloat($('#gold_ltp').html());
+			var sgd_ltp_val = isNaN($('#sgd_ltp').html()) ? 0 : parseFloat($('#sgd_ltp').html());
+			if ($('.GoldSdoll_ltp_val').html() > parseFloat(parseFloat(Spotgold_ltp_val) * parseFloat(sgd_ltp_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_ltp_val").css('color', '#008000');
+				$(".GoldSdoll_ltp_val").css('background-color', '');
+			} else if ($('.GoldSdoll_low_val').html() < parseFloat(parseFloat(Spotgold_ltp_val) * parseFloat(sgd_ltp_val))
+				.toFixed(2)) {
+				$(".GoldSdoll_ltp_val").css('color', '#FF0000');
+				$(".GoldSdoll_ltp_val").css('background-color', '');
+			} else {
+				$(".GoldSdoll_ltp_val").css('color', '');
+				$(".GoldSdoll_ltp_val").css('background-color', '');
+			}
+			$('.GoldSdoll_ltp_val').html(parseFloat(parseFloat(Spotgold_ltp_val) * parseFloat(sgd_ltp_val)).toFixed(2));
+			//GOLD S$ Rate calculions End Here
+			//SGD/INR Rate calculions Start Here
+
+			var inr_ask_val = isNaN($('#inr_ask').html()) ? 0 : parseFloat($('#inr_ask').html());
+			var inr_bid_val = isNaN($('#inr_bid').html()) ? 0 : parseFloat($('#inr_bid').html());
+			var inr_high_val = isNaN($('.inr_high').html()) ? 0 : parseFloat($('.inr_high').html());
+			var inr_low_val = isNaN($('.inr_low').html()) ? 0 : parseFloat($('.inr_low').html());
+
+			var inr_ltp_val = isNaN($('#inr_ltp').html()) ? 0 : parseFloat($('#inr_ltp').html());
+
+			//SGD/INR Rate calculions End Here
+			//Gold INR OZ Rate calculions Start Here
+			if ($('.goldinr_bid_val').html() > parseFloat(parseFloat(inr_bid_val) * parseFloat(Spotgold_bid_val)).toFixed(
+					0)) {
+				$(".goldinr_bid_val").css('color', '#008000');
+				$(".goldinr_bid_val").css('background-color', '');
+			} else if ($('.goldinr_bid_val').html() < parseFloat(parseFloat(inr_bid_val) * parseFloat(Spotgold_bid_val))
+				.toFixed(0)) {
+				$(".goldinr_bid_val").css('color', '#FF0000');
+				$(".goldinr_bid_val").css('background-color', '');
+			} else {
+				$(".goldinr_bid_val").css('color', '');
+				$(".goldinr_bid_val").css('background-color', '');
+			}
+			$('.goldinr_bid_val').html(parseFloat(parseFloat(inr_bid_val) * parseFloat(Spotgold_bid_val)).toFixed(0));
+			if ($('.goldinr_ask_val').html() > parseFloat(parseFloat(inr_ask_val) * parseFloat(Spotgold_ask_val)).toFixed(
+					0)) {
+				$(".goldinr_ask_val").css('color', '#008000');
+				$(".goldinr_ask_val").css('background-color', '');
+			} else if ($('.goldinr_ask_val').html() < parseFloat(parseFloat(inr_ask_val) * parseFloat(Spotgold_ask_val))
+				.toFixed(0)) {
+				$(".goldinr_ask_val").css('color', '#FF0000');
+				$(".goldinr_ask_val").css('background-color', '');
+			} else {
+				$(".goldinr_ask_val").css('color', '');
+				$(".goldinr_ask_val").css('background-color', '');
+			}
+			$('.goldinr_ask_val').html(parseFloat(parseFloat(inr_ask_val) * parseFloat(Spotgold_ask_val)).toFixed(0));
+			if ($('.goldinr_high_val').html() > parseFloat(parseFloat(inr_high_val) * parseFloat(Spotgold_high_val))
+				.toFixed(0)) {
+				$(".goldinr_high_val").css('color', '#008000');
+				$(".goldinr_high_val").css('background-color', '');
+			} else if ($('.goldinr_high_val').html() < parseFloat(parseFloat(inr_high_val) * parseFloat(Spotgold_high_val))
+				.toFixed(0)) {
+				$(".goldinr_high_val").css('color', '#FF0000');
+				$(".goldinr_high_val").css('background-color', '');
+			} else {
+				$(".goldinr_high_val").css('color', '');
+				$(".goldinr_high_val").css('background-color', '');
+			}
+			$('.goldinr_high_val').html(parseFloat(parseFloat(inr_high_val) * parseFloat(Spotgold_high_val)).toFixed(0));
+			if ($('.goldinr_low_val').html() > parseFloat(parseFloat(inr_low_val) * parseFloat(Spotgold_low_val)).toFixed(
+					0)) {
+				$(".goldinr_low_val").css('color', '#008000');
+				$(".goldinr_low_val").css('background-color', '');
+			} else if ($('.goldinr_low_val').html() < parseFloat(parseFloat(inr_low_val) * parseFloat(Spotgold_low_val))
+				.toFixed(0)) {
+				$(".goldinr_low_val").css('color', '#FF0000');
+				$(".goldinr_low_val").css('background-color', '');
+			} else {
+				$(".goldinr_low_val").css('color', '');
+				$(".goldinr_low_val").css('background-color', '');
+			}
+			$('.goldinr_low_val').html(parseFloat(parseFloat(inr_low_val) * parseFloat(Spotgold_low_val)).toFixed(0));
+			if ($('.goldinr_ltp_val').html() > parseFloat(parseFloat(inr_ltp_val) * parseFloat(Spotgold_ltp_val)).toFixed(
+					2)) {
+				$(".goldinr_ltp_val").css('color', '#008000');
+				$(".goldinr_ltp_val").css('background-color', '');
+			} else if ($('.goldinr_ltp_val').html() < parseFloat(parseFloat(inr_ltp_val) * parseFloat(Spotgold_ltp_val))
+				.toFixed(2)) {
+				$(".goldinr_ltp_val").css('color', '#FF0000');
+				$(".goldinr_ltp_val").css('background-color', '');
+			} else {
+				$(".goldinr_ltp_val").css('color', '');
+				$(".goldinr_ltp_val").css('background-color', '');
+			}
+			$('.goldinr_ltp_val').html(parseFloat(parseFloat(inr_ltp_val) * parseFloat(Spotgold_ltp_val)).toFixed(2));
+			/*Gold INR OZ Rate calculions End Here
+			/*Silver S$ Rate calculions Start Here*/
+			var spotsilver_bid_val = isNaN($('#silver_bid').html()) ? 0 : parseFloat($('#silver_bid').html());
+			if ($('.silverSdoll_bid_val').html() > parseFloat(parseFloat(spotsilver_bid_val) * parseFloat(sgd_ask_val))
+				.toFixed(2)) {
+				$(".silverSdoll_bid_val").css('color', '#008000');
+				$(".silverSdoll_bid_val").css('background-color', '');
+			} else if ($('.silverSdoll_bid_val').html() < parseFloat(parseFloat(spotsilver_bid_val) * parseFloat(
+					sgd_ask_val)).toFixed(2)) {
+				$(".silverSdoll_bid_val").css('color', '#FF0000');
+				$(".silverSdoll_bid_val").css('background-color', '');
+			} else {
+				$(".silverSdoll_bid_val").css('color', '');
+				$(".silverSdoll_bid_val").css('background-color', '');
+			}
+			$('.silverSdoll_bid_val').html(parseFloat(parseFloat(spotsilver_bid_val) * parseFloat(sgd_bid_val)).toFixed(
+				2));
+			var spotsilver_ask_val = isNaN($('#silver_ask').html()) ? 0 : parseFloat($('#silver_ask').html());
+			if ($('.silverSdoll_ask_val').html() > parseFloat(parseFloat(spotsilver_ask_val) * parseFloat(sgd_ask_val))
+				.toFixed(2)) {
+				$(".silverSdoll_ask_val").css('color', '#008000');
+				$(".silverSdoll_ask_val").css('background-color', '');
+			} else if ($('.silverSdoll_ask_val').html() < parseFloat(parseFloat(spotsilver_ask_val) * parseFloat(
+					sgd_ask_val)).toFixed(2)) {
+				$(".silverSdoll_ask_val").css('color', '#FF0000');
+				$(".silverSdoll_ask_val").css('background-color', '');
+			} else {
+				$(".silverSdoll_ask_val").css('color', '');
+				$(".silverSdoll_ask_val").css('background-color', '');
+			}
+			$('.silverSdoll_ask_val').html(parseFloat(parseFloat(spotsilver_ask_val) * parseFloat(sgd_ask_val)).toFixed(
+				2));
+			var spotsilver_high_val = isNaN($('.silver_high').html()) ? 0 : parseFloat($('.silver_high').html());
+			if ($('.silverSdoll_high_val').html() > parseFloat(parseFloat(spotsilver_high_val) * parseFloat(sgd_high_val))
+				.toFixed(2)) {
+				$(".silverSdoll_high_val").css('color', '#008000');
+				$(".silverSdoll_high_val").css('background-color', '');
+			} else if ($('.silverSdoll_high_val').html() < parseFloat(parseFloat(spotsilver_high_val) * parseFloat(
+					sgd_high_val)).toFixed(2)) {
+				$(".silverSdoll_high_val").css('color', '#FF0000');
+				$(".silverSdoll_high_val").css('background-color', '');
+			} else {
+				$(".silverSdoll_high_val").css('color', '');
+				$(".silverSdoll_high_val").css('background-color', '');
+			}
+			$('.silverSdoll_high_val').html(parseFloat(parseFloat(spotsilver_high_val) * parseFloat(sgd_high_val)).toFixed(
+				2));
+			var spotsilver_low_val = isNaN($('.silver_low').html()) ? 0 : parseFloat($('.silver_low').html());
+			if ($('.silverSdoll_low_val').html() > parseFloat(parseFloat(spotsilver_low_val) * parseFloat(sgd_low_val))
+				.toFixed(2)) {
+				$(".silverSdoll_low_val").css('color', '#008000');
+				$(".silverSdoll_low_val").css('background-color', '');
+			} else if ($('.silverSdoll_low_val').html() < parseFloat(parseFloat(spotsilver_low_val) * parseFloat(
+					sgd_low_val)).toFixed(2)) {
+				$(".silverSdoll_low_val").css('color', '#FF0000');
+				$(".silverSdoll_low_val").css('background-color', '');
+			} else {
+				$(".silverSdoll_low_val").css('color', '');
+				$(".silverSdoll_low_val").css('background-color', '');
+			}
+			$('.silverSdoll_low_val').html(parseFloat(parseFloat(spotsilver_low_val) * parseFloat(sgd_low_val)).toFixed(
+				2));
+			var spotsilver_ltp_val = isNaN($('#silver_ltp').html()) ? 0 : parseFloat($('#silver_ltp').html());
+			if ($('.silverSdoll_ltp_val').html() > parseFloat(parseFloat(spotsilver_ltp_val) * parseFloat(sgd_ltp_val))
+				.toFixed(2)) {
+				$(".silverSdoll_ltp_val").css('color', '#008000');
+				$(".silverSdoll_ltp_val").css('background-color', '');
+			} else if ($('.silverSdoll_ltp_val').html() < parseFloat(parseFloat(spotsilver_low_val) * parseFloat(
+					sgd_ltp_val)).toFixed(2)) {
+				$(".silverSdoll_ltp_val").css('color', '#FF0000');
+				$(".silverSdoll_ltp_val").css('background-color', '');
+			} else {
+				$(".silverSdoll_ltp_val").css('color', '');
+				$(".silverSdoll_ltp_val").css('background-color', '');
+			}
+			$('.silverSdoll_ltp_val').html(parseFloat(parseFloat(spotsilver_ltp_val) * parseFloat(sgd_ltp_val)).toFixed(
+				2));
+			//Silver S$ Rate calculions End Here
+
+		} catch (e) {}
+	}
+	$(document).ready(function () {
+		fnStartClock();
+	});
+	
+	
+	function updateIndicator() {
+		var online = navigator.onLine;
+		if (online) {
+			document.getElementById("connectionmsg").innerHTML = "";
+			document.getElementById("connectionmsg").style.display = "none";
+		} else {
+			document.getElementById("connectionmsg").innerHTML = "Please check your internet connection";
+			document.getElementById("connectionmsg").style.display = "block";
+		}
+	}
+
+	
+
+	
+</script>
+
+
+<script>
+	var $ticker = $('[data-ticker="list"]'),
+    tickerItem = '[data-ticker="item"]'
+    itemCount = $(tickerItem).length,
+    viewportWidth = 0;
+
+function setupViewport(){
+    $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
+    
+    for (i = 0; i < itemCount; i ++){
+        var itemWidth = $(tickerItem).eq(i).outerWidth();
+        viewportWidth = viewportWidth + itemWidth;
+    }
+    
+    $ticker.css('width', viewportWidth);
+}
+
+function animateTicker(){
+    $ticker.animate({
+        marginLeft: -viewportWidth
+      }, 30000, "linear", function() {
+        $ticker.css('margin-left', '0');
+        animateTicker();
+      });
+}
+
+function initializeTicker(){
+    setupViewport();
+    animateTicker();
+    
+    $ticker.on('mouseenter', function(){
+        $(this).stop(true);
+    }).on('mouseout', function(){
+        animateTicker();
+    });
+}
+
+initializeTicker();
+</script>
+</div>
+
+
+					<div class="table-responsivetop2" style="display:none;">
+						<table class="table table_responstive1">
+							<thead>
+								<tr class="headertable2">
+									<th colspan="2" class="ratevalue">
+										<div><img src="assets/images/flog/indian-flag.png" data-toggle="tooltip"
+												title="INR"> GOLD PRICE</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="table2">
+									<td class="gold_ratevalue" style="">
+										<div><span class="coin_rate" id="mcx_bid" data-source="lightstreamer"
+												data-grid="bidaskrates" data-item="GOLD-C" data-field="bid"></span>
+										</div>
+									</td>
+									<td class="gold_ratevalue">
+										<div><span class="coin_rate" id="mcx_ask" data-source="lightstreamer"
+												data-grid="bidaskrates" data-item="GOLD-C" data-field="ask"></span>
+										</div>
+									</td>
+								</tr>
+								<tr class="table2">
+									<td class="gold_ratevalue1" style="">(Bid)</td>
+									<td class="gold_ratevalue1">(Ask)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<input type="hidden" name="updatetime" id="mcx_bid" value="" />
+					<input type="hidden" name="updatetime" id="mcx_ask" value="" />
+
+				</div>
+				
+					<div class="table-responsivetop10" style="margin-bottom:20px;">
+						<div id="divrate" style="">
+							<strong>
+								<div>Singapore Gold Mart Price</div>
+							</strong>
+							<table class="table table_responstive10" id="liveratetable">
+								<thead>
+									<tr class="headertable10">
+										<th class="commodity1" width="34%"></th>
+										<th class="commodity1" width="33%">We Buy</th>
+										<th class="commodity1" width="33%">We Sell</th>
+										<label align="center" id="connectionmsg" class="connectionmsg"
+											style="display: none; color: rgb(204, 0, 0); margin-top: 54px; font-size:32px; background-color:#000000; position:absolute; line-height:86px;">We
+											sense something went wrong, price are not live.</label>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="table4">
+										<td class="commodity_ratevalue2" style="">
+											<img src="../bullion/assets/images/gold100grms.png"
+												class="img-responsive gold_live1"> 100 Grms</td>
+										<td class="commodity_ratevalue3"><span></span></td>
+										<td class="commodity_ratevalue3"><span></span></td>
+										<td style="display:none;">
+											<div class="com_id">38</div>
+											<div class="com_type">0</div>
+											<div class="com_weight">100.000</div>
+											<div class="com_other_charges">0.00</div>
+											<div class="com_correction_type">0.05</div>
+											<div class="com_sel_premium">0.00</div>
+											<div class="com_buy_premium">0.00</div>
+											<div class="com_premium_type">0</div>
+											<div class="com_sel_active">1</div>
+											<div class="com_buy_active">1</div>
+											<div class="com_delverydays">0</div>
+											<div class="com_isregion">0</div>
+											<div class="com_calpurity"></div>
+											<div class="com_tax"></div>
+											<div class="com_octroi"></div>
+											<div class="com_stamduty"></div>
+											<div class="deliverydays">27-02-2024</div>
+											<div class="displyname">GOLD-100Gms</div>
+											<div class="mcxsymbol">1</div>
+											<div class="banksymbol">1</div>
+											<div class="rcomid">1</div>
+											<div class="trade_type">1</div>
+											<div class="sell_diff">44.00</div>
+											<div class="buy_diff">80.00</div>
+											<div class="sell_rate">87.75</div>
+											<div class="com_display_purity">0</div>
+											<div class="com_roundoff">0</div>
+											<div class="com_is_coin">0</div>
+											<div class="com_is_special">0</div>
+											<div class="com_img_location">
+											</div>
+											<div class="com_istrade">0</div>
+										</td>
+									</tr>
+								</tbody>
+					
+<script type="text/javascript">
+	var baseurl = "nex-ride.com";
+	var lsdata = {
+		"url": "http:\/\/logimaxrates.in:8080",
+		"adapter": "OSWLSTOCKLIST_REMOTE",
+		"provider": "OSWLQUOTE_ADAPTER",
+		"username": "lmxwinbullliteapp"
+	};
+</script>
+
+</body>
+
+</html>

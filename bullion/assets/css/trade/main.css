@@ -1,0 +1,93 @@
+.margin-container{height:35px;margin-bottom:2px;font-size:18px;padding:0;background-color:#9d4ab1;color:#FFF!important}
+.margin-container .margin-text{background:#d0cecf;height:35px;line-height:35px;font-size:18px;font-weight:bold;background-color:#9d4ab1}
+.margin-container .margin-value{color:#FFF;height:35px;line-height:35px;border:1px solid #e1e1e1;font-size:18px;font-weight:bold;background-color:#9d4ab1}
+.margin-container>div{padding:0;line-height:35px;height:35px}
+.report-section{text-align:center;border-top:1px solid #fff;height:35px;line-height:35px;background:#9d4ab1}
+.report-section .report-1{border-right:1px solid #FFF}
+.report-section a{color:#FFF}
+.comm-purchase{pointer-events:none;opacity:.6;border:1px solid #ccc;background:#FFF;padding-top:10px}
+.requst_heading{height:35px;line-height:35px;text-align:center;font-weight:bold;background:#fec900;font-size:16px;padding-left:0;padding-right:0}
+.request-text{background:#9d4ab1;line-height:30px;text-align:center;padding:0;font-size:14px;font-weight:bold;color:#FFF}
+.request-value{background:#eaeaea;height:30px;line-height:30px;text-align:left;color:#000}
+.request-btn-text{font-weight:bold;font-size:15px;color:#000;text-align:center}
+.request-rows{margin:5px 0 5px 0}
+.button-book .buysellrates{text-align:center;color:#fff;height:70px;padding:10px;border-radius:5px;cursor:pointer;font-size:19px}
+#book .buysellrates{background:#008000}
+.button-cancel .buysellrates{text-align:center;background:#f00;color:#FFF;height:70px;padding:10px;border-radius:5px;cursor:pointer;font-size:19px;line-height:50px}
+.button-update .buysellrates{text-align:center;background:#008000;color:#FFF;height:70px;padding:10px;border-radius:5px;cursor:pointer;font-size:19px}
+#rateval{font-weight:bold;font-size:19px}
+.button-book{margin-top:15px;margin-bottom:10px}
+.button-cancel{margin-top:15px;margin-bottom:10px}
+.button-update{margin-top:15px;margin-bottom:10px}
+.button-red{padding-left:25px;padding-right:25px;pointer-events:none;display:none}
+.insuff_margin{text-align:center;background:#f00;color:#fff;height:45px;padding:13px;border-radius:5px;margin-top:20px}
+.atv_btn{pointer-events:all!important;opacity:1!important}
+.width-input{background-color:#FFF;font-weight:bold;text-align:left;height:30px!important;font-size:15px;padding:0 12px}
+.report_table{border-collapse:separate;font-size:13px;width:100%!important}
+.report_table thead{background-color:#9d4ab1}
+.report_table tbody{background:#eaeaea}
+.report_table tr td{border:1px solid #ccc;color:#000!important}
+.report_table tr th{border:1px solid #ccc;color:#FFF!important}
+.report-heading{line-height:35px;margin-bottom:20px;margin-top:15px;margin-left:0;margin-right:0}
+.headings{background:#ded2c4;border:1px dotted #ccc;padding:0;text-align:center;cursor:pointer;color:#000}
+.headings:hover{font-weight:bold}
+.headings-active{font-weight:bold;background-color:#9d4ab1;color:#fff}
+.report_table tr th,.report_table tr td{text-align:center}
+.report-bottom{font-size:13px;margin:0}
+.refresh_report{text-align:left;cursor:pointer;padding:0;color:#000;font-size:20px!important}
+.view_full_history{text-align:right;padding:0;color:#000;font-style:italic}
+#reports{color:#000}
+.paddingzero{padding:0}
+#loader{margin:0;padding:0;position:fixed;right:0;top:30%;left:30%;z-index:30001;display:none}
+.reports-container{padding:0}
+.allReports{padding-bottom:20px;min-height:400px}
+.maxmin{text-align:right;font-style:italic;font-size:12px;padding-right:25px;padding-left:25px}
+.textbox-1{padding:0;width:28%;margin-left:2px}
+.textbox-2{padding:0;width:29%;margin-left:2px}
+.button-center{float:none;margin:0 auto;margin-top:15px;margin-bottom:10px}
+.filtered_commodities{color:#9d4ab1!important;font-size:14px;font-weight:bold;font-style:italic}
+.save_filter{text-align:right;font-weight:bold;cursor:pointer;text-decoration:underline}
+#show_all_comm{text-decoration:underline;cursor:pointer}
+.save_filter{text-align:right}
+.buySell-info{text-align:center;margin-top:10px;color:#f00;font-weight:bold}
+#addremarks_modal .modal-header{padding-top:5px;padding-bottom:5px}
+#addremarks_modal #bookStatus{font-weight:bold;font-size:14px}
+#addremarks_modal .remarks{margin-top:20px}
+#addremarks_modal #remarks{width:50%}
+.form-group{margin-bottom:15px}
+.estimations{border:1px solid #ccc;border-radius:4px;box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}
+.totalqty{font-size:12px;font-style:italic}
+.rateval_buy,.rateval_sell,.rateval_update{height:25px!important}
+.buysellrates{font-weight:bold}
+.bg-darkgreen{background:#060!important}
+.bg-darkred{background:#400000!important}
+.font-label{font-size:12px}
+.top-div{width:40%;margin-left:auto;margin-right:auto;color:#000}
+#register{margin-top:20px}
+#register .top-div{width:50%}
+.forget_head{margin-top:20px}
+#activate_terminal{font-size:12px;vertical-align:middle;color:#FFF;text-decoration:underline;padding-left:11px;cursor:pointer}
+.trade-section{margin-top:4px;padding:0}
+.displayLotSize{text-align:right;padding-right:10px;margin-bottom:-9px;color:#000}
+.goback{text-align:left;cursor:pointer;color:#3391af}
+.resendotp{cursor:pointer;color:#3391af;text-align:left;padding-top:5px}
+.align-2{text-align:right!important}
+.report_availbal{font-size:18px!important;font-weight:bold}
+.sellEnabled,.buyEnabled{text-decoration:underline;cursor:pointer}
+.sellDisabled,.buyDisabled{text-decoration:none;cursor:not-allowed}
+input[type=text],input[type=password],input[type=number]{border-radius:0 5px 5px 0;border:1px solid #eee;margin-bottom:15px;width:100%;height:40px;float:left;padding:0 15px}
+.request-btn-value label{color:#000!important}
+.booking-buttons{display:flex;justify-content:center}
+#termsConditions a{color:#3862c6;text-decoration:underline}
+.table1{background:#fff}
+.table1 td{text-align:center;font-size:16px;font-weight:bold;color:#000;border-right:1px solid #f3f3f3;font-family:Arial}
+@media only screen and (max-width:767px){.top-div,#register .top-div{width:90%;margin-left:auto;margin-right:auto}
+.displayLotSize{margin-bottom:0}
+}@media only screen and (max-width:480px){.marquee_head{margin-top:0!important}
+.reports-container{padding-left:5px;padding-right:5px}
+.report_table{display:block;overflow:scroll}
+.report_table tr th,.report_table tr td{font-size:12px}
+.report-bottom{margin-bottom:20px}
+.request-btn-value{font-size:12px}
+}
+.headertable1 th{color:#fff;}
